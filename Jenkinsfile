@@ -1,13 +1,15 @@
 pipeline {
-    agent { label "built-in" }
-        triggers {
-        pollSCM('H/2 * * * *')    
-                }
-            stages {
+    agent {
+        label 'built-in'
+    }
+    triggers {
+        pollSCM('H/2 * * * *')
+    }
+    stages {
         stage('build') {
-                steps {
+            steps {
                 sh 'docker --version'
-                        }
-                }
-                    }
+            }
         }
+    }
+}
